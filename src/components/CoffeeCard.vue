@@ -16,7 +16,7 @@ const cartStore = useCartStore();
       <h3 class="text-xl font-semibold">{{ coffee.name }}</h3>
       <p class="text-gray-600 mt-1">{{ coffee.description }}</p>
       <div class="mt-4 flex justify-between items-center">
-        <span class="text-lg font-bold">Rp {{ coffee.price.toLocaleString() }}</span>
+        <span class="text-lg font-bold text-brown-800">Rp {{ coffee.price.toLocaleString('id-ID') }}</span>
         <button
           @click="cartStore.addToCart(coffee)"
           class="bg-brown-600 text-white px-4 py-2 rounded-lg hover:bg-brown-700"
