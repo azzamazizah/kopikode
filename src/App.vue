@@ -29,11 +29,12 @@ function handleOrderSubmitted(order: Order) {
   <div class="min-h-screen bg-brown-50">
     <header class="bg-gradient-to-r from-brown-900 via-brown-800 to-brown-700 text-white py-6">
       <div class="container mx-auto px-4">
-        <Logo variant="light" />
+        <div class="flex items-center justify-between">
+          <Logo variant="light" />
+          <Navigation />
+        </div>
       </div>
     </header>
-
-    <Navigation />
 
     <!-- Hero Section -->
     <HeroSlider />
@@ -112,7 +113,7 @@ function handleOrderSubmitted(order: Order) {
         <div class="flex flex-col md:flex-row justify-between items-center">
           <Logo variant="light" />
           <div class="mt-4 md:mt-0 text-center md:text-right">
-            <p>© 2024 Zi Coffee. All rights reserved.</p>
+            <p> 2024 Zi Coffee. All rights reserved.</p>
             <p class="text-brown-200">Your Modern Coffee Experience</p>
           </div>
         </div>
