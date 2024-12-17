@@ -39,8 +39,8 @@ onBeforeUnmount(() => {
     @mouseleave="startSlideShow"
   >
     <div 
-      class="absolute inset-0 flex transition-transform duration-500 ease-in-out"
-      :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
+      class="absolute inset-0 flex transition-transform duration-500 ease-in-out transform"
+      :style="{ transform: `translateX(${currentSlide * -100}%)` }"
     >
       <div 
         v-for="slide in slides" 
