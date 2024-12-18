@@ -10,14 +10,18 @@ const cartStore = useCartStore();
 
 const handleImageError = (event: Event) => {
   const imgElement = event.target as HTMLImageElement;
-  imgElement.src = '/images/default-coffee.jpg';
+  imgElement.src = new URL('/images/default-coffee.jpg', import.meta.url).href;
+};
+
+const getImageUrl = (path: string) => {
+  return new URL(path, import.meta.url).href;
 };
 </script>
 
 <template>
   <div class="bg-white rounded-lg shadow-md overflow-hidden">
     <img 
-      :src="coffee.image"
+      :src="getImageUrl(coffee.image)"
       :alt="coffee.name" 
       class="w-full h-40 sm:h-48 object-cover"
       @error="handleImageError"
