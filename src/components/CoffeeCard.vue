@@ -10,11 +10,18 @@ const cartStore = useCartStore();
 
 const handleImageError = (event: Event) => {
   const imgElement = event.target as HTMLImageElement;
-  imgElement.src = new URL('/images/default-coffee.jpg', import.meta.url).href;
+  imgElement.src = new URL('../assets/images/default-coffee.jpg', import.meta.url).href;
 };
 
 const getImageUrl = (path: string) => {
-  return new URL(path, import.meta.url).href;
+  try {
+    // Hapus leading slash jika ada
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return new URL(`../assets/${cleanPath}`, import.meta.url).href;
+  } catch (error) {
+    console.error('Error loading image:', error);
+    return new URL('../assets/images/default-coffee.jpg', import.meta.url).href;
+  }
 };
 </script>
 
