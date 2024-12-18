@@ -7,14 +7,20 @@ defineProps<{
 }>();
 
 const cartStore = useCartStore();
+
+const handleImageError = (event: Event) => {
+  const imgElement = event.target as HTMLImageElement;
+  imgElement.src = '/images/default-coffee.jpg';
+};
 </script>
 
 <template>
   <div class="bg-white rounded-lg shadow-md overflow-hidden">
     <img 
-      :src="coffee.image" 
+      :src="coffee.image"
       :alt="coffee.name" 
       class="w-full h-40 sm:h-48 object-cover"
+      @error="handleImageError"
     >
     <div class="p-3 sm:p-4">
       <h3 class="text-lg sm:text-xl font-semibold">{{ coffee.name }}</h3>
