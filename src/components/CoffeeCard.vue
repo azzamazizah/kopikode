@@ -2,7 +2,7 @@
 import { useCartStore } from '../stores/cart';
 import type { Coffee } from '../types';
 
-const props = defineProps<{
+defineProps<{
   coffee: Coffee;
 }>();
 
@@ -11,7 +11,12 @@ const cartStore = useCartStore();
 
 <template>
   <div class="bg-white rounded-lg shadow-md overflow-hidden">
-    <img :src="coffee.image" :alt="coffee.name" class="w-full h-40 sm:h-48 object-cover">
+    <img 
+      :src="coffee.image" 
+      :alt="coffee.name" 
+      class="w-full h-40 sm:h-48 object-cover"
+      @error="$event.target.src = '/images/default-coffee.jpg'"
+    >
     <div class="p-3 sm:p-4">
       <h3 class="text-lg sm:text-xl font-semibold">{{ coffee.name }}</h3>
       <p class="text-gray-600 mt-1 text-sm sm:text-base">{{ coffee.description }}</p>
