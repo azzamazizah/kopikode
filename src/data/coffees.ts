@@ -6,7 +6,7 @@ export const coffees: Coffee[] = [
     name: 'Espresso',
     price: 35000,
     description: 'Strong and concentrated coffee shot',
-    image: '../public/images/espresso.jpg',
+    image: '/images/espresso.jpg',
     category: 'Hot Coffee'
   },
   {
@@ -14,7 +14,7 @@ export const coffees: Coffee[] = [
     name: 'Cappuccino',
     price: 45000,
     description: 'Espresso with steamed milk foam',
-    image: '../public/images/cappuccino.jpg',
+    image: '/images/cappuccino.jpg',
     category: 'Hot Coffee'
   },
   {
@@ -22,7 +22,7 @@ export const coffees: Coffee[] = [
     name: 'Iced Latte',
     price: 42000,
     description: 'Espresso with cold milk and ice',
-    image: '../public/images/iced-latte.jpg',
+    image: '/images/iced-latte.jpg',
     category: 'Cold Coffee'
   },
   {
@@ -30,7 +30,7 @@ export const coffees: Coffee[] = [
     name: 'Caramel Macchiato',
     price: 48000,
     description: 'Espresso with vanilla and caramel',
-    image: '../public/images/caramel-macchiato.jpg',
+    image: '/images/caramel-macchiato.jpg',
     category: 'Hot Coffee'
   },
   {
@@ -38,7 +38,7 @@ export const coffees: Coffee[] = [
     name: 'Cold Brew',
     price: 38000,
     description: 'Smooth cold-brewed coffee',
-    image: '../public/images/cold-brew.jpg',
+    image: '/images/cold-brew.jpg',
     category: 'Cold Coffee'
   }
 ];
