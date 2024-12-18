@@ -45,7 +45,7 @@ function toggleMobileMenu() {
     </div>
 
     <!-- Mobile Navigation -->
-    <div class="md:hidden">
+    <div class="md:hidden relative">
       <button 
         @click="toggleMobileMenu"
         class="text-white p-2 rounded-lg hover:bg-brown-600/50"
@@ -57,13 +57,13 @@ function toggleMobileMenu() {
       <!-- Mobile Menu -->
       <div 
         v-show="isMobileMenuOpen"
-        class="absolute top-full left-0 right-0 bg-brown-800 mt-2 rounded-lg shadow-lg py-2"
+        class="absolute top-full right-0 mt-2 w-48 bg-brown-800 rounded-lg shadow-lg py-2 z-50"
       >
         <button
           v-for="section in sections"
           :key="section.id"
           @click="scrollToSection(section.id)"
-          class="block w-full text-left px-4 py-2 transition-all duration-300"
+          class="block w-full text-left px-4 py-3 transition-all duration-300"
           :class="{
             'bg-brown-600 text-white': activeSection === section.id,
             'text-white hover:bg-brown-600/50': activeSection !== section.id
@@ -75,3 +75,16 @@ function toggleMobileMenu() {
     </div>
   </nav>
 </template>
+
+<style scoped>
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>
