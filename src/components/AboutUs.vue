@@ -3,7 +3,7 @@ import { milestones } from '../data/about';
 </script>
 
 <template>
-  <section id="about" class="py-16 bg-brown-50">
+  <section id="about" class="py-16 bg-brown-70">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-8 text-brown-800">Our Journey</h2>
       
