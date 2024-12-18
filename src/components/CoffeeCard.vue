@@ -11,15 +11,15 @@ const cartStore = useCartStore();
 
 <template>
   <div class="bg-white rounded-lg shadow-md overflow-hidden">
-    <img :src="coffee.image" :alt="coffee.name" class="w-full h-48 object-cover">
-    <div class="p-4">
-      <h3 class="text-xl font-semibold">{{ coffee.name }}</h3>
-      <p class="text-gray-600 mt-1">{{ coffee.description }}</p>
-      <div class="mt-4 flex justify-between items-center">
-        <span class="text-lg font-bold text-brown-800">Rp {{ coffee.price.toLocaleString('id-ID') }}</span>
+    <img :src="coffee.image" :alt="coffee.name" class="w-full h-40 sm:h-48 object-cover">
+    <div class="p-3 sm:p-4">
+      <h3 class="text-lg sm:text-xl font-semibold">{{ coffee.name }}</h3>
+      <p class="text-gray-600 mt-1 text-sm sm:text-base">{{ coffee.description }}</p>
+      <div class="mt-3 sm:mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
+        <span class="text-base sm:text-lg font-bold text-brown-800">Rp {{ coffee.price.toLocaleString('id-ID') }}</span>
         <button
           @click="cartStore.addToCart(coffee)"
-          class="bg-brown-600 text-white px-4 py-2 rounded-lg hover:bg-brown-700"
+          class="w-full sm:w-auto bg-brown-600 text-white px-4 py-2 rounded-lg hover:bg-brown-700 text-sm sm:text-base"
         >
           Add to Cart
         </button>

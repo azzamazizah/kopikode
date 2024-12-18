@@ -27,10 +27,10 @@ function handleOrderSubmitted(order: Order) {
 
 <template>
   <div class="min-h-screen bg-brown-50">
-    <header class="bg-gradient-to-r from-brown-900 via-brown-800 to-brown-700 text-white py-6">
+    <header class="bg-gradient-to-r from-brown-900 via-brown-800 to-brown-700 text-white py-4 sm:py-6 sticky top-0 z-50">
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between">
-          <Logo variant="light" />
+          <Logo variant="light" class="w-24 sm:w-32" />
           <Navigation />
         </div>
       </div>
@@ -39,11 +39,11 @@ function handleOrderSubmitted(order: Order) {
     <!-- Hero Section -->
     <HeroSlider />
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-6 sm:py-8">
       <!-- Promotions Section -->
-      <section id="promotions" class="mb-12 scroll-mt-20">
-        <h2 class="text-2xl font-bold mb-6 text-brown-800">Special Promotions</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section id="promotions" class="mb-8 sm:mb-12 scroll-mt-20">
+        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-brown-800">Special Promotions</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <PromoCard
             v-for="promo in promos"
             :key="promo.id"
@@ -53,10 +53,10 @@ function handleOrderSubmitted(order: Order) {
       </section>
 
       <!-- Menu and Cart Section -->
-      <div id="menu" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 scroll-mt-20">
-        <div class="md:col-span-2">
-          <h2 class="text-2xl font-bold mb-6 text-brown-800">Our Menu</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div id="menu" class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 scroll-mt-20">
+        <div class="lg:col-span-2">
+          <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-brown-800">Our Menu</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <CoffeeCard
               v-for="coffee in coffees"
               :key="coffee.id"
@@ -65,12 +65,12 @@ function handleOrderSubmitted(order: Order) {
           </div>
         </div>
         
-        <div class="sticky top-24">
+        <div class="lg:sticky lg:top-24">
           <ShoppingCart />
           <button
             v-if="!showOrderForm && cartStore.items.length > 0"
             @click="showOrderForm = true"
-            class="mt-4 w-full bg-gradient-to-r from-brown-700 to-brown-600 text-white py-2 px-4 rounded-md hover:from-brown-800 hover:to-brown-700 transition-all duration-300"
+            class="mt-4 w-full bg-gradient-to-r from-brown-700 to-brown-600 text-white py-3 px-4 rounded-md hover:from-brown-800 hover:to-brown-700 transition-all duration-300 text-sm sm:text-base"
           >
             Proceed to Checkout
           </button>
@@ -81,9 +81,9 @@ function handleOrderSubmitted(order: Order) {
       <AboutUs />
 
       <!-- Coffee Articles Section -->
-      <section id="articles" class="mb-12 scroll-mt-20">
-        <h2 class="text-2xl font-bold mb-6 text-brown-800">Coffee Knowledge</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section id="articles" class="mb-8 sm:mb-12 scroll-mt-20">
+        <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-brown-800">Coffee Knowledge</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <ArticleCard
             v-for="article in articles"
             :key="article.id"
@@ -92,13 +92,13 @@ function handleOrderSubmitted(order: Order) {
         </div>
       </section>
 
-      <div v-if="showOrderForm" class="mt-8">
+      <div v-if="showOrderForm" class="mt-6 sm:mt-8">
         <OrderForm @order-submitted="handleOrderSubmitted" />
       </div>
 
-      <div v-if="orderConfirmation" class="mt-8 bg-brown-50 border border-brown-200 p-6 rounded-lg">
-        <h2 class="text-2xl font-bold text-brown-800 mb-4">Order Confirmed!</h2>
-        <div class="space-y-2 text-brown-700">
+      <div v-if="orderConfirmation" class="mt-6 sm:mt-8 bg-brown-50 border border-brown-200 p-4 sm:p-6 rounded-lg">
+        <h2 class="text-xl sm:text-2xl font-bold text-brown-800 mb-3 sm:mb-4">Order Confirmed!</h2>
+        <div class="space-y-2 text-brown-700 text-sm sm:text-base">
           <p><strong>Name:</strong> {{ orderConfirmation.name }}</p>
           <p><strong>Email:</strong> {{ orderConfirmation.email }}</p>
           <p><strong>Phone:</strong> {{ orderConfirmation.phone }}</p>
