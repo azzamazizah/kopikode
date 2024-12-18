@@ -15,7 +15,6 @@ const cartStore = useCartStore();
       :src="coffee.image" 
       :alt="coffee.name" 
       class="w-full h-40 sm:h-48 object-cover"
-      @error="$event.target.src = '/images/default-coffee.jpg'"
     >
     <div class="p-3 sm:p-4">
       <h3 class="text-lg sm:text-xl font-semibold">{{ coffee.name }}</h3>
